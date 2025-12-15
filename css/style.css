@@ -20,15 +20,26 @@ header .topset .h1 a{}
 header .topset .h1 img{}
 
 header .reservation {display: flex; gap: 25px; align-items: center;}
-header .reservation a {padding: 17px 36px; font-size: 26px; color: #fff; background: #0F2E6B; border-radius: 30px;}
+header .reservation> a {padding: 17px 36px; font-size: 26px; color: #fff; background: #0F2E6B; border-radius: 30px;}
 
 header nav {}
 header nav .gnb {display: flex; justify-content: space-between}
-header nav .gnb li {font-size: 22px;  flex-grow: 1; transition: .2s;}
-header nav .gnb li a {color: #0F2C69;  padding: 30px 70px; display: flex; justify-content: center;}
+header nav .gnb > li {font-size: 22px;  flex-grow: 1; transition: .2s; position: relative;}
+header nav .gnb > li > a {color: #0F2C69;  padding: 30px 70px; display: flex; justify-content: center;}
 
-header nav .gnb li:hover {font-size: 24px; font-weight: bold;}
+header nav .gnb > li:hover {font-size: 24px; font-weight: bold;}
+header nav .gnb >li:hover .lnb {opacity: 1; visibility: visible;}
 
+header nav .gnb .lnb { position: absolute; background: #fff; padding: 49px 36px; display: flex; box-shadow: 4px 6px 60px rgba(0, 0, 0, 0.1); width: 200%; opacity: 0; transition: 0.3s; visibility: hidden;}
+header nav .gnb .lnb figure {align-self: stretch; display: flex; align-items: center;}
+header nav .gnb .lnb figure img {}
+header nav .gnb .lnb p {margin: 20px 0; font-size: 20px; font-weight: 600; color: #133070; border-right: 1px solid black; padding-right: 150px;}
+header nav .gnb .lnb ul {display: flex; gap: 17px 0; padding-left: 30px; align-items: center; gap: 73px;}
+header nav .gnb .lnb ul li {font-size: 18px; width: 100%; box-sizing: border-box; text-align: center; border: 1px solid #000;}
+header nav .gnb .lnb ul li a {padding: 5px 0; display: block; border: 1px solid #000;}
+
+
+header nav .gnb li:last-child .lnb {right: 0; left: auto;}
 
 
 .hero {height: 650px; background: #eee;}
