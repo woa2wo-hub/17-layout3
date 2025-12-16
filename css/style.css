@@ -4,11 +4,11 @@
 @import url("font.css");
 
 body {font-family: 'Pretendard';}
-.container {max-width: 1620px; margin: 0 auto; border: 1px solid #000;}
+.container {max-width: 1620px; margin: 0 auto; position: relative;}
 
 
 
-header {height: 282px; border: 1px solid #000;}
+header {height: 282px;}
 
 header .topset{display: flex; justify-content: space-between;}
 header .topset .phonenum {display: flex; font-size: 24px; gap: 13px; justify-content: center; align-items: center; color: #808080; flex-direction: column; margin-left: 6.2vw;}
@@ -22,27 +22,117 @@ header .topset .h1 img{}
 header .reservation {display: flex; gap: 25px; align-items: center;}
 header .reservation> a {padding: 17px 36px; font-size: 26px; color: #fff; background: #0F2E6B; border-radius: 30px;}
 
+header .reservation:hover a {background:#0084FF;}
+
 header nav {}
 header nav .gnb {display: flex; justify-content: space-between}
-header nav .gnb > li {font-size: 22px;  flex-grow: 1; transition: .2s; position: relative;}
+header nav .gnb > li {font-size: 22px;  flex-grow: 1; transition: .2s;}
 header nav .gnb > li > a {color: #0F2C69;  padding: 30px 70px; display: flex; justify-content: center;}
 
 header nav .gnb > li:hover {font-size: 24px; font-weight: bold;}
 header nav .gnb >li:hover .lnb {opacity: 1; visibility: visible;}
 
-header nav .gnb .lnb { position: absolute; background: #fff; padding: 49px 36px; display: flex; box-shadow: 4px 6px 60px rgba(0, 0, 0, 0.1); width: 200%; opacity: 0; transition: 0.3s; visibility: hidden;}
+header nav .gnb .lnb { left: 0; width: 100%; z-index: 3;
+    position: absolute; background: rgba(255, 255, 255,0.9); padding: 49px 36px; display: flex; box-shadow: 4px 6px 60px rgba(0, 0, 0, 0.1); opacity: 0; transition: 0.3s; visibility: hidden; 
+}
 header nav .gnb .lnb figure {align-self: stretch; display: flex; align-items: center;}
 header nav .gnb .lnb figure img {}
-header nav .gnb .lnb p {margin: 20px 0; font-size: 20px; font-weight: 600; color: #133070; border-right: 1px solid black; padding-right: 150px;}
-header nav .gnb .lnb ul {display: flex; gap: 17px 0; padding-left: 30px; align-items: center; gap: 73px;}
-header nav .gnb .lnb ul li {font-size: 18px; width: 100%; box-sizing: border-box; text-align: center; border: 1px solid #000;}
-header nav .gnb .lnb ul li a {padding: 5px 0; display: block; border: 1px solid #000;}
+header nav .gnb .lnb p {margin: 20px 0; font-size: 20px; font-weight: 600; color: #133070; border-right: 1px solid #e5e5e5; padding-right: 150px;}
+header nav .gnb .lnb ul {
+    display: flex; align-items: center; gap: 30px; padding: 5px 0 5px 30px;
+}
+header nav .gnb .lnb ul li {
+    font-size: 18px; width: 240px; box-sizing: border-box; text-align: center; padding: 5px 0; margin-left: 10px;
+}
+header nav .gnb .lnb ul li a {padding: 12px 0; display: block; border: 1px solid #808080; border-radius: 20px; }
+
+header nav .gnb .lnb li:hover { border-radius: 30px; display: block;}
+header nav .gnb .lnb li:hover a {color: #fff; background: #183d54;}
 
 
-header nav .gnb li:last-child .lnb {right: 0; left: auto;}
+
+.hero {height: 650px; position: relative; overflow: hidden;}
+.hero ul {width: 300%; height: 100%; display: flex; transition: .6s; }
+.hero ul li {width: 100%; height: 100%;}
+.hero ul li:nth-child(2) {background: green;}
+.hero ul li:nth-child(3) {background: blue;}
+.hero ul li img {width: 100%; height: 100%; object-fit: cover; animation: heroimg 10s forwards;}
+
+.hero .arrow_box {position: absolute; width: 100%; top: 50%; z-index: 5;}
+.hero .arrow_box div {color: #fff; position: absolute; width: 50px; height: 50px; cursor: pointer; transform: translate(0, -50%); align-items: center; display: flex;}
+.hero .arrow_box div.btn_prev{left: 100px;}
+.hero .arrow_box div.btn_next{right: 100px;}
+.hero .arrow_box div .material-symbols-outlined {font-size: 60px; position: absolute; left: 10px; font-weight: 100;}
+    
 
 
-.hero {height: 650px; background: #eee;}
+
+
+.hero .textbox{position: absolute; left: 42%; top: 25%; width: 1100px; transform: translate(-50%, -10%); }
+.hero .textbox strong {font-size: 70px; color: #0F2E6B; font-weight: 700; display: block; animation: herotext 3s forwards; position: relative; opacity: 0;}
+.hero .textbox p {font-size: 28px; color: #0F2E6B; margin-top: 25px; display: block; animation: herotext 3s  forwards; position: relative; animation-delay: 0.3s; left: 200px; opacity: 0;} 
+
+
+@keyframes herotext {
+    0%{left: 200px; opacity: 0;}
+    100%{left: 0; opacity: 1;}    
+}
+
+@keyframes heroimg {
+0%{transform: scale(1.1);}    
+100%{transform: scale(1);}
+}
+
+
+
+
 .section_box {} 
+.section1 {}
+.section1 .container {width: 1350px; margin: 0 auto; display: flex; gap: 116px; justify-content: space-between; margin-top: 100px;}
+.section1 .container .recent_board { flex-grow: 1;}
+.section1 .container .recent_board h2{font-size: 26px; margin-bottom: 35px; display: flex; justify-content:space-around; align-items: center; text-align: center; gap: 50px;}
+.section1 .container .recent_board h2 a { width: 30px; height: 30px; position: relative;}
 
-footer {height: 225px; background: #d9d9d9;}
+.section1 .container .recent_board h2 a::before,
+.section1 .container .recent_board h2 a::after {content: ""; position: absolute; width: 20px; height: 1px; background: #484747; left: 50%; top: 50%; transform: translate(-50%,-50%); transition: 0.3s;}
+
+.section1 .container .recent_board h2 a::after {transform: translate(-50%,-50%) rotate(90deg)}
+.section1 .container .recent_board h2 a:hover::before {transform: translate(-50%,-50%) rotate(180deg);}
+.section1 .container .recent_board h2 a:hover::after {transform: translate(-50%,-50%) rotate(270deg);}
+
+.section1 .container .recent_board ul{}
+.section1 .container .recent_board ul li{ font-size: 20px; line-height: 40px; border-bottom: 1px solid #eee; margin-bottom: 15px;}
+.section1 .container .recent_board ul li a{ display: flex; justify-content: space-between; gap: 30px;}
+.section1 .container .recent_board ul li a .title {overflow: hidden; flex-grow: 1; text-overflow: ellipsis; white-space: nowrap;}
+.section1 .container .recent_board ul li a .date { font-size: 16px;}
+
+
+.section2 {background: url(../images/bg.png) no-repeat center top;}
+.section2 .container {margin-top: 150px; padding-top: 80px; width: 1350px; padding-bottom: 78px;}
+.section2 .container h2 {text-align: center;;}
+.section2 .container h2 strong {color: #0F2E6B; font-size: 34px; font-weight: bold; background: #F6CA58; border-radius: 30px; padding: 10px 14px;}
+.section2 .container h2 span {font-size: 34px; color: #0F2E6B; font-weight: normal;}
+
+
+.section2 .container .content {margin-top: 60px; display: flex; justify-content: space-between; gap: 110px;}
+.section2 .container .content li {border: 1px solid #000; flex-grow: 1; background: #fff; height: 265px; width: 30%; text-align: center; align-items: center; display: flex; justify-content: center; gap: 63px; flex-direction: column;}
+/* .section2 .container .content li a img{width: 100%; height: 100%; object-fit: cover;} */
+/* .section2 .container .content li a .textbox {position: absolute; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); left: 0; top: 0; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;}
+.section2 .container .content li a .textbox strong {font-size: 24px; color: #fff;}
+.section2 .container .content li a .textbox p {font-size: 18px; color: #000;} */
+
+.section2 .container .content li .tooth_top {border: 1px solid #000;}
+.section2 .container .content li .tooth_top p {}
+.section2 .container .content li .tooth_top strong {}
+.section2 .container .content li .tooth_bottom {border: 1px solid #000; }
+.section2 .container .content li .tooth_bottom a {display: block; text-align: center;}
+.section2 .container .content li .tooth_bottom a span {display: inline-flex; align-items: center;
+
+
+
+
+
+
+
+footer {height: 225px;}
+
